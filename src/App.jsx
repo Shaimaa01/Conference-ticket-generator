@@ -3,7 +3,7 @@ import backgroundDesktop from "/assets/images/background-desktop.png";
 import BackgroundParts from "./components/BackgroundParts";
 import Logo from "./components/Logo";
 import Text from "./components/Text";
-import Form from "./components/Form";
+import FormContainer from "./components/FormContainer";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
         <BackgroundParts />
         <Logo />
         <Text />
-        <Form/>
+        <FormContainer />
       </main>
     </>
   );

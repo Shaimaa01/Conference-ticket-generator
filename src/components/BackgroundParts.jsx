@@ -4,7 +4,7 @@ import patternSquigglyLineTop from "/assets/images/pattern-squiggly-line-top.svg
 import patternCircle from "/assets/images/pattern-circle.svg";
 function BackgroundParts() {
   return (
-    <>
+    <section>
       <img src={patternLines} alt="pattern-Lines" className="absolute top-0 " />
       <img
         src={patternSquigglyLineBottomDesktop}
@@ -26,7 +26,7 @@ function BackgroundParts() {
         alt="pattern-circle"
         className="absolute top-[534px] left-[938px]"
       />
-    </>
+    </section>
   );
 }
 
