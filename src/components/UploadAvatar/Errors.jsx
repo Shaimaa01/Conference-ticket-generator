@@ -5,7 +5,7 @@ function Errors({ errors }) {
   return (
     <p
       className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
-        errors.file ? "text-orange-500" : "text-neutral-300"
+        errors.file ? "text-[#F57463]" : "text-neutral-300"
       }`}
     >
       <IconInfo />

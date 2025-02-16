@@ -1,6 +1,7 @@
-import { Formik, Form, Field, ErrorMessage } from "formik";
+import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import UploadAvatarContainer from "./UploadAvatar/UploadAvatarContainer";
+import IconInfo from "./IconInfo";
 
 function FormContainer() {
   const initialValues = {
@@ -10,7 +11,6 @@ function FormContainer() {
     github: "",
   };
 
-  // Maximum file size (500KB)
   const MAX_FILE_SIZE = 500 * 1024; // 500KB in bytes
 
   const validationSchema = Yup.object({
@@ -37,14 +37,14 @@ function FormContainer() {
     >
       {({ setFieldValue, errors, values }) => {
         return (
-          <Form className="mt-[45px] mx-auto w-[460px] flex flex-col gap-[24px] items-center justify-center  relative z-10">
+          <Form className="mt-[45px] max-sm:mt-[40px] max-sm:px-[16px] mx-auto lg:w-[460px] max-lg:w-[522px] max-sm:w-[100%] flex flex-col gap-[24px] items-center justify-center  relative z-10">
             <UploadAvatarContainer
               errors={errors}
               values={values}
               setFieldValue={setFieldValue}
             />
             {/* Full Name */}
-            <label className="w-full h-[90px] flex flex-col gap-[12px]">
+            <label className="w-full  flex flex-col gap-[12px]">
               <span className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white">
                 Full Name
               </span>
@@ -52,13 +52,24 @@ function FormContainer() {
                 id="fullName"
                 name="fullName"
                 type="text"
-                className="w-full h-[54px] rounded-[12px] border border-[#8784A5] cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0"
+                className={`w-full h-[54px] rounded-[12px] border border-[#8784A5] cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0  focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#8784A5] ${
+                  errors.fullName ? "border-[#F57463]" : "border-[#8784A5]"
+                } `}
               />
-              <ErrorMessage name="fullName" component="p" className="error" />
+              {errors.fullName && (
+                <p
+                  className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
+                    errors.fullName ? "text-[#F57463]" : "text-neutral-300"
+                  }`}
+                >
+                  <IconInfo />
+                  <span>{errors.fullName}</span>
+                </p>
+              )}
             </label>
 
             {/* Email */}
-            <label className="w-full h-[90px] flex flex-col gap-[12px]">
+            <label className="w-full  flex flex-col gap-[12px]">
               <span className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white">
                 Email Address
               </span>
@@ -66,13 +77,24 @@ function FormContainer() {
                 name="email"
                 type="email"
                 placeholder="example@email.com"
-                className="w-full h-[54px] rounded-[12px] border border-[#8784A5] cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0"
+                className={`w-full h-[54px] rounded-[12px] border  cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#8784A5] ${
+                  errors.fullName ? "border-[#F57463]" : "border-[#8784A5]"
+                } `}
               />
-              <ErrorMessage name="email" component="p" className="error" />
+              {errors.email && (
+                <p
+                  className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
+                    errors.email ? "text-[#F57463]" : "text-neutral-300"
+                  }`}
+                >
+                  <IconInfo />
+                  <span>{errors.email}</span>
+                </p>
+              )}
             </label>
 
             {/* GitHub Username */}
-            <label className="w-full h-[90px] flex flex-col gap-[12px]">
+            <label className="w-full  flex flex-col gap-[12px]">
               <span className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white">
                 GitHub Username
               </span>
@@ -80,15 +102,26 @@ function FormContainer() {
                 placeholder="@yourusername"
                 name="github"
                 type="text"
-                className="w-full h-[54px] rounded-[12px] border border-[#8784A5] cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0"
+                className={`w-full h-[54px] rounded-[12px] border  cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#8784A5] ${
+                  errors.fullName ? "border-[#F57463]" : "border-[#8784A5]"
+                } `}
               />
-              <ErrorMessage name="github" component="p" className="error" />
+              {errors.github && (
+                <p
+                  className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
+                    errors.github ? "text-[#F57463]" : "text-neutral-300"
+                  }`}
+                >
+                  <IconInfo />
+                  <span>{errors.github}</span>
+                </p>
+              )}
             </label>
 
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full h-[54px] rounded-[12px]  bg-[#F57463] py-[16px] font-[Inconsolata-ExtraBold] text-[20px] leading-[20px] tracking-[-0.3px] text-[#0D082D]  "
+              className="w-full h-[54px] rounded-[12px]  bg-[#F57463] hover:bg-[#E1604F] hover:shadow-[0px_4px_0px_0px_#F57463] cursor-pointer py-[16px] font-[Inconsolata-ExtraBold] text-[20px] leading-[20px] tracking-[-0.3px] text-[#0D082D] focus:outline-2 focus:outline-offset-2 focus:outline-white focus:shadow-[0px_0px_0px_3px_#0D082D]"
             >
               Generate My Ticket
             </button>
