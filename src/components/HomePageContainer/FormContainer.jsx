@@ -46,8 +46,8 @@ function FormContainer() {
           <Form
             onKeyDown={(e) => {
               if (e.key === "Enter" && e.target.tagName !== "TEXTAREA") {
-                e.preventDefault(); 
-                document.querySelector("button[type='submit']").click(); 
+                e.preventDefault();
+                document.querySelector("button[type='submit']").click();
               }
             }}
             className="mt-[45px] max-sm:mt-[40px] max-sm:px-[16px] mx-auto lg:w-[460px] max-lg:w-[522px] max-sm:w-[100%] flex flex-col gap-[24px] items-center justify-center  relative z-10"
@@ -58,85 +58,103 @@ function FormContainer() {
               setFieldValue={setFieldValue}
             />
             {/* Full Name */}
-            <label className="w-full  flex flex-col gap-[12px]">
-              <span className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white">
+            <div className="w-full flex flex-col gap-[12px]">
+              <label
+                htmlFor="fullName"
+                className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white"
+              >
                 Full Name
-              </span>
+              </label>
               <Field
                 id="fullName"
                 name="fullName"
                 type="text"
-                className={`w-full h-[54px] rounded-[12px] border border-[#8784A5] cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0  focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#8784A5] ${
+                className={`w-full h-[54px] rounded-[12px] border border-[#8784A5] cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] text-neutral-300 text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#8784A5] ${
                   errors.fullName && touched.fullName
                     ? "border-[#F57463]"
                     : "border-[#8784A5]"
-                } `}
+                }`}
+                aria-describedby="fullNameError"
+                aria-invalid={
+                  errors.fullName && touched.fullName ? "true" : "false"
+                }
               />
               {errors.fullName && touched.fullName && (
                 <p
-                  className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
-                    errors.fullName ? "text-[#F57463]" : "text-neutral-300"
-                  }`}
+                  id="fullNameError"
+                  className="font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] text-[#F57463]"
                 >
                   <IconInfo />
                   <span>{errors.fullName}</span>
                 </p>
               )}
-            </label>
+            </div>
 
             {/* Email */}
-            <label className="w-full  flex flex-col gap-[12px]">
-              <span className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white">
+            <div className="w-full flex flex-col gap-[12px]">
+              <label
+                htmlFor="email"
+                className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white"
+              >
                 Email Address
-              </span>
+              </label>
               <Field
+                id="email"
                 name="email"
                 type="email"
                 placeholder="example@email.com"
-                className={`w-full h-[54px] rounded-[12px] border  cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#8784A5] ${
-                  errors.fullName && touched.email
+                className={`w-full h-[54px] rounded-[12px] border cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300 text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#8784A5] ${
+                  errors.email && touched.email
                     ? "border-[#F57463]"
                     : "border-[#8784A5]"
-                } `}
+                }`}
+                aria-describedby="emailError"
+                aria-invalid={errors.email && touched.email ? "true" : "false"}
               />
               {errors.email && touched.email && (
                 <p
-                  className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
-                    errors.email ? "text-[#F57463]" : "text-neutral-300"
-                  }`}
+                  id="emailError"
+                  className="font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] text-[#F57463]"
                 >
                   <IconInfo />
                   <span>{errors.email}</span>
                 </p>
               )}
-            </label>
+            </div>
 
             {/* GitHub Username */}
-            <label className="w-full  flex flex-col gap-[12px]">
-              <span className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white">
+            <div className="w-full flex flex-col gap-[12px]">
+              <label
+                htmlFor="github"
+                className="font-[Inconsolata-Medium] text-[20px] leading-[24px] tracking-[-0.5px] text-white"
+              >
                 GitHub Username
-              </span>
+              </label>
               <Field
-                placeholder="@yourusername"
+                id="github"
                 name="github"
                 type="text"
-                className={`w-full h-[54px] rounded-[12px] border  cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300  text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#8784A5] ${
-                  errors.fullName && touched.github
+                placeholder="@yourusername"
+                className={`w-full h-[54px] rounded-[12px] border cursor-pointer p-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] placeholder:text-neutral-300 text-neutral-300 text-[18px] font-[Inconsolata-Regular] leading-[21.6px] tracking-0 focus:outline-2 focus:outline-offset-2 focus:outline-[#8784A5] ${
+                  errors.github && touched.github
                     ? "border-[#F57463]"
                     : "border-[#8784A5]"
-                } `}
+                }`}
+                aria-describedby="githubError"
+                aria-invalid={
+                  errors.github && touched.github ? "true" : "false"
+                }
               />
               {errors.github && touched.github && (
                 <p
-                  className={` font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] ${
-                    errors.github ? "text-[#F57463]" : "text-neutral-300"
-                  }`}
+                  id="githubError"
+                  className="font-[Inconsolata-Regular] tracking-[-0.2px] leading-[14.4px] text-[12px] flex items-center gap-[8px] text-[#F57463]"
                 >
                   <IconInfo />
                   <span>{errors.github}</span>
                 </p>
               )}
-            </label>
+            </div>
 
             {/* Submit Button */}
             <button
