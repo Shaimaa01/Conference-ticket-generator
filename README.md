@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](/assets/images/Screenshot 2025-02-17 at 09-46-22 Ticket Generator.png)
+![](public\assets\images\Screenshot 2025-02-17 at 09-46-22 Ticket Generator.png)
 
 ### Links
 
@@ -59,7 +59,6 @@ Users should be able to:
 - [Yup](https://github.com/jquense/yup) - Schema validation library
 - Semantic HTML5 markup
 - js
-
 ### What I learned
 
 During this project, I learned several key concepts and techniques that improved my understanding of web development:
