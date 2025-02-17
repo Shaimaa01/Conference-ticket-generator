@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import iconUpload from "/assets/images/icon-upload.svg";
-import { dragAndDrop } from "../../utils/dragAndDrop.js";
+import { dragAndDrop } from "../../../utils/dragAndDrop.js";
 import { handleFileChange } from "/src/utils/handleFileChange.js";
 
 function UploadBox({ setFieldValue }) {
