@@ -1,8 +1,8 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import backgroundDesktop from "/assets/images/background-desktop.png";
-import backgroundMobile from "/public/assets/images/background-mobile.png";
-import backgroundTablet from "/public/assets/images/background-tablet.png";
+import backgroundMobile from "/assets/images/background-mobile.png";
+import backgroundTablet from "/assets/images/background-tablet.png";
 import BackgroundParts from "./components/BackgroundParts";
 import Logo from "./components/Logo";
 import { useState, useEffect } from "react";

@@ -4,14 +4,12 @@ import { dragAndDrop } from "../../../utils/dragAndDrop.js";
 import { handleFileChange } from "/src/utils/handleFileChange.js";
 
 function UploadBox({ setFieldValue }) {
-  const { handleDragOver, handleDragLeave, handleDrop } =
-    dragAndDrop(setFieldValue);
+  const { handleDragOver, handleDrop } = dragAndDrop(setFieldValue);
 
   return (
     <label
       htmlFor="file-upload"
       onDragOver={handleDragOver}
-      onDragLeave={handleDragLeave}
       onDrop={(e) => handleDrop(e, setFieldValue)}
       className={`custom-dashed group cursor-pointer rounded-[12px] h-[126px] py-[12px] px-[16px] flex flex-col items-center justify-center gap-[16px] bg-[#ffffff14] hover:bg-[#ffffff33] backdrop-blur-[5px] focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-[#8784A5] `}
     >

@@ -1,6 +1,6 @@
 import patternLines from "/assets/images/pattern-lines.svg";
 import patternSquigglyLineBottomDesktop from "/assets/images/pattern-squiggly-line-bottom-desktop.svg";
-import patternSquigglyLineBottomMobileTablet from "/public/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg";
+import patternSquigglyLineBottomMobileTablet from "/assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg";
 import patternSquigglyLineTop from "/assets/images/pattern-squiggly-line-top.svg";
 import patternCircle from "/assets/images/pattern-circle.svg";
 import { useState, useEffect } from "react";

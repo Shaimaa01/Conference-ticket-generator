@@ -41,7 +41,7 @@ Users should be able to:
 
 ### Screenshot
 
-![](/public/Screenshot%202025-02-17%20at%2009-46-22%20Ticket%20Generator.png)
+![](/Screenshot%202025-02-17%20at%2009-46-22%20Ticket%20Generator.png)
 
 ### Links
 

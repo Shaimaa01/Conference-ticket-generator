@@ -1,6 +1,6 @@
-import patternLogoMark from "/public/assets/images/logo-mark.svg";
+import patternLogoMark from "/assets/images/logo-mark.svg";
 import { useLocation } from "react-router-dom";
-import iconGithub from "/public/assets/images/icon-github.svg";
+import iconGithub from "/assets/images/icon-github.svg";
 
 function Ticket() {
   const location = useLocation();
@@ -9,7 +9,11 @@ function Ticket() {
   return (
     <section className="backdrop-blur-md relative mt-[111px] max-lg:mt-[80px] max-sm:mt-[72px] mx-auto bg-cover w-[602px] max-sm:w-[343px] max-sm:h-[160px] h-[280.9px] bg-[url('/assets/images/pattern-ticket.svg')] p-[24px] max-sm:p-[16px] flex flex-col justify-between">
       <div className="flex gap-[20px] max-sm:gap-[12px] items-start ">
-        <img src={patternLogoMark} alt="Logo" className="mt-[6px] max-sm:mt-[4px] max-sm:w-[29px] max-sm:h-[29px] " />
+        <img
+          src={patternLogoMark}
+          alt="Logo"
+          className="mt-[6px] max-sm:mt-[4px] max-sm:w-[29px] max-sm:h-[29px] "
+        />
         <div>
           <h3 className="font-[Inconsolata-Bold] text-[40px] max-sm:text-[24px] leading-[44px] max-sm:leading-[26.4px] tracking-[-1px] text-white mb-[12px] max-sm:mb-[8px]">
             Coding Conf
